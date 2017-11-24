@@ -1,0 +1,11 @@
+{
+  "name": "nerd-house",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js"
+  },
+  "author": "ben",
+  "license": "ISC"
+}
