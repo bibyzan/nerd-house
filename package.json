@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.16.2",
+    "facebook-chat-api": "^1.4.0",
     "nexmo": "^2.0.2"
   },
   "engines": {

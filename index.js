@@ -1,4 +1,5 @@
 const express = require('express');
+const login = require("facebook-chat-api");
 const app = express();
 
 const Nexmo = require('nexmo');
@@ -8,17 +9,15 @@ const nexmo = new Nexmo({
 });
 
 app.get('/ring-doorbell', function (req, res) {
+    login({email: process.env.FACEBOOK_USERNAME, password: process.env.FACEBOOK_PASSWORD}, function (err, api) {
+        if(err) return console.error(err);
 
-    nexmo.message.sendSms(
-        16056389181, '15132529656', 'yo',
-        function (err, responseData) {
-            if (err) {
-                console.log(err);
-            } else {
-                console.dir(responseData);
-            }
-        }
-    );
+        api.sendMessage('doorbell ring','1759489744121223', function (err, messageInfo) {
+            if (err) return console.error(err)
+            console.log(messageInfo)
+        });
+
+    });
 });
 
 app.get('/',function (req,res) {
