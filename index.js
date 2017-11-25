@@ -1,6 +1,7 @@
 const express = require('express');
 const login = require("facebook-chat-api");
 const app = express();
+var fs = require('fs')
 
 app.get('/ring-doorbell', function (req, res) {
     login({email: process.env.FACEBOOK_USERNAME, password: process.env.FACEBOOK_PASSWORD}, function (err, api) {
