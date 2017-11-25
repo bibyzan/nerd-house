@@ -34,7 +34,7 @@ app.listen(process.env.PORT || 3000, function () {
 });
 
 
-login({email: process.env.FACEBOOK_USERNAME, password: process.env.FACEBOOK_PASSWORD}, function (err, api) {
+login({email: process.env.FACEBOOK_USERNAME, password: process.env.FACEBOOK_PASSWORD, forceLogin: true}, function (err, api) {
     if(err) return console.error(err);
 
     api.listen(function (err, message) {
