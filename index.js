@@ -13,7 +13,7 @@ app.get('/ring-doorbell', function (req, res) {
         16056389181, '15132529656', 'yo',
         function (err, responseData) {
             if (err) {
-                console.log(err);r
+                console.log(err);
             } else {
                 console.dir(responseData);
             }
