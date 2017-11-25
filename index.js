@@ -16,7 +16,7 @@ app.get('/ring-doorbell', function (req, res) {
             if (err) return console.error(err)
             console.log(messageInfo)
         });
-
+        res.send('doorbell rang');
     });
 });
 
